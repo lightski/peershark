@@ -10,9 +10,8 @@ import socket
 def generateFlow(filename):
 	sem.acquire()
 	
-	inputfile = open(filename)
-	data = [line.strip() for line in inputfile]
-	inputfile.close()
+        with open(filename) as intputfile:
+                data = [line.strip() for line in inputfile]
 		
 	packetlist = []
 	for eachline in data:

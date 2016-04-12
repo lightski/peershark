@@ -15,7 +15,7 @@ PeerShark requires Python v2.7.* and Tshark installed, and has been tested only 
 
 Modules to be used in the following order:
 
-1. FilterPackets.py : Take inputdir or input files from PCAPFILES.
+1. FilterPackets.py : Take inputdir or input files from PCAPFILES (file defined in P2P_CONSTANTS.py)
 The module runs tshark on each file in inputdir and extracts the
 fields mention in TsharkOptions.txt such as src-ip,dst-ip,
 protocol, payload length. One new file is created per pcap file 
@@ -34,7 +34,7 @@ FLOWDATADIR.
 flows into superflows based on input parameters -> store in 
 SUPERFLOWDATADIR.
 
- usage: python generateSuperFlows.py start(in hrs) increment(in hrs) end(in hrs)
+ usage: python generateSuperFlows.py start(int hrs) increment(int hrs) end(int hrs)
 
   Number of files generated = (end - start)/increment
 

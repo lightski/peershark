@@ -33,12 +33,12 @@ def processFile(filename):
 		z.append(float(fields[4]) / 1000)
 	inputfile.close()
 	
-	filename = filename.split('/')
+        filename = filename.split('/')
 	outputdir = NEWDIR + filename[-2] + '/'
 	if not os.path.exists(outputdir):
-		os.makedirs(outputdir)
+            os.makedirs(outputdir)
 
-	plotGraph(x1, y, z, outputdir + filename[-1] + '.png')
+        plotGraph(x1, y, z, outputdir + filename[-1] + '.png')
 	# plotGraph(x2, y, z, filename + 'modified.png')
 	print 'Completed plotting ' + '/'.join(filename)
 
@@ -52,6 +52,7 @@ csvfiles = []
 for eachname in folders:
 	name = SUPERFLOWDATADIR + eachname +'/'
 	if os.path.isdir(name):
+                print "getting " + name
 		csvfiles += getCSVFiles(name)
 
 print csvfiles
